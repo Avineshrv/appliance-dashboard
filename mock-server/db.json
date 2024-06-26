@@ -1,0 +1,32 @@
+{
+  "appliances": [
+    {
+      "serialNo": "JTD-512312",
+      "theatreName": "Kriplle Square",
+      "location": {
+        "city": "New Delhi",
+        "state": "Delhi",
+        "country": "India"
+      },
+      "bandwidth": "1 Gbps",
+      "avgBandwidth": "812 Kbps",
+      "deviceStatus": "offline",
+      "downloadStatus": "failed",
+      "osVersion": "5.2.1.3"
+    },
+    {
+      "serialNo": "JTD-512322",
+      "theatreName": "PVR",
+      "location": {
+        "city": "Chennai",
+        "state": "Delhi",
+        "country": "India"
+      },
+      "bandwidth": "2 Gbps",
+      "avgBandwidth": "1 Kbps",
+      "deviceStatus": "online",
+      "downloadStatus": "passed",
+      "osVersion": "5.2.1.4"
+    }
+  ]
+}
