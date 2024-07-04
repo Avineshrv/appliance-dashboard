@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import { FaSearch } from 'react-icons/fa';
 import { FaAngleLeft } from 'react-icons/fa6';
 import { FaAngleRight } from 'react-icons/fa6';
+import { ImEqualizer2 } from 'react-icons/im';
 
 const Table = ({ appliances }) => {
   const router = useRouter();
@@ -109,19 +110,24 @@ const Table = ({ appliances }) => {
         </div>
       </div>
       <div className="p-4 flex flex-wrap flex-col sm:flex-row sm:justify-between sm:items-center bg-white rounded-t-lg">
-        <div className="relative w-full sm:w-1/4">
-          <div className="absolute right-0 top-0 bottom-0 flex items-center pr-1 sm:pr-3">
-            <FaSearch className="text-gray-400" />
+        <div className="flex w-full sm:w-1/4 gap-4">
+          <div className="relative flex-grow">
+            <div className="absolute right-0 top-0 bottom-0 flex items-center pr-1 sm:pr-3">
+              <FaSearch className="text-gray-400" />
+            </div>
+            <input
+              type="text"
+              placeholder="Search"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="px-4 py-2 pr-10 border rounded w-full"
+            />
           </div>
-          <input
-            type="text"
-            placeholder="Search"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="px-4 py-2 pr-10 border rounded w-full"
-          />
+          <button className="bg-gray-100 text-black px-3 py-1 rounded hover:bg-gray-200 flex justify-center items-center gap-2">
+            <ImEqualizer2 />
+            Filter
+          </button>
         </div>
-
         <div className="p-4 flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="flex items-center space-x-2">
             <span>Show</span>

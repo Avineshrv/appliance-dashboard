@@ -42,19 +42,19 @@ const ApplianceDetail = () => {
   }
 
   return (
-    <div>
-      <nav className="mb-4 bg-gray-200 p-4" aria-label="breadcrumb">
+    <div className="bg-gray-200 min-h-screen">
+      <nav className="pb-4 bg-gray-200 p-4" aria-label="breadcrumb">
         <ol className="flex text-md text-gray-500 space-x-2 items-center">
           <li>
-            <Link href="/" className="hover:underline">
+            <Link href="/" className="hover:underline text-[#69788C]">
               Devices
             </Link>
           </li>
-          <li>&gt;</li>
-          <li>{appliance.serialNo}</li>
+          <li className="text-[#69788C]">&gt;</li>
+          <li className="text-[#2D3540]">{appliance.serialNo}</li>
         </ol>
       </nav>
-      <div className="p-6">
+      <div className="px-6 pt-6 pb-3 bg-white">
         <div className="flex justify-between items-center mb-4">
           <div>
             <h1 className="text-4xl font-bold mb-2">{appliance.serialNo}</h1>
@@ -98,14 +98,15 @@ const ApplianceDetail = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-200 pt-2 mb-4">
+        <div className="border-t border-gray-200 pt-2">
           <div className="flex space-x-8">
-            <div className="pb-2">Details</div>
-            <div className="pb-2">Content</div>
-            <div className="pb-2">Bandwidth</div>
+            <div>Details</div>
+            <div>Content</div>
+            <div>Bandwidth</div>
           </div>
         </div>
-
+      </div>
+      <div className="m-6 p-6 rounded-lg bg-white">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           <div>
             <h2 className="text-lg font-bold">Device Serial</h2>

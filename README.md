@@ -1,4 +1,4 @@
-# Appliance Dashboard Project
+# Fully Responsive Appliance Dashboard Project
 
 This project consists of a Next.js application that interfaces with a mock API server using JSON Server.
 
