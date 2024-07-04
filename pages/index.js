@@ -20,7 +20,7 @@ const Home = () => {
   console.log(appliances, 'DATA');
 
   return (
-    <div className="container bg-gray-300 min-h-screen">
+    <div className="bg-gray-300 min-h-screen">
       <h1 className="text-5xl font-bold bg-white p-4">Devices</h1>
       <div className="p-10">
         <ApplianceData appliances={appliances} />

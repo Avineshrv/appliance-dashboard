@@ -64,9 +64,9 @@ const Table = ({ appliances }) => {
   };
 
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-hidden">
       <div className="p-4 flex justify-between items-center bg-white my-4 rounded-lg">
-        <div className="flex gap-6">
+        <div className="flex gap-6 flex-wrap">
           {Object.entries(statusCounts.deviceStatus).map(([status, count]) => (
             <div key={status} className={`flex items-center space-x-1`}>
               <span
@@ -108,9 +108,9 @@ const Table = ({ appliances }) => {
           )}
         </div>
       </div>
-      <div className="p-4 flex justify-between items-center bg-white rounded-t-lg">
-        <div className="relative w-1/4">
-          <div className="absolute right-0 top-0 bottom-0 flex items-center pr-3">
+      <div className="p-4 flex flex-wrap flex-col sm:flex-row sm:justify-between sm:items-center bg-white rounded-t-lg">
+        <div className="relative w-full sm:w-1/4">
+          <div className="absolute right-0 top-0 bottom-0 flex items-center pr-1 sm:pr-3">
             <FaSearch className="text-gray-400" />
           </div>
           <input
@@ -122,7 +122,7 @@ const Table = ({ appliances }) => {
           />
         </div>
 
-        <div className="p-4 flex justify-between items-center gap-4">
+        <div className="p-4 flex flex-col sm:flex-row justify-between items-center gap-4">
           <div className="flex items-center space-x-2">
             <span>Show</span>
             <select
@@ -167,111 +167,110 @@ const Table = ({ appliances }) => {
           </div>
         </div>
       </div>
-
-      <table className="min-w-full bg-white rounded-b-lg">
-        <thead className="border-b-gray-100">
-          <tr>
-            <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 text-gray-600">
-              Device Serial
-            </th>
-            <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 text-gray-600">
-              Location
-            </th>
-            {/* <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 text-gray-600">
-              Location
-            </th> */}
-            <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 text-gray-600">
-              Bandwidth
-            </th>
-            {/* <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 text-gray-600">
-              Avg Bandwidth
-            </th> */}
-            <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 text-gray-600">
-              Status
-            </th>
-            <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 text-gray-600">
-              Download Status
-            </th>
-            <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 text-gray-600">
-              OS Version
-            </th>
-            <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 text-gray-600"></th>
-          </tr>
-        </thead>
-        <tbody>
-          {currentAppliances.map((appliance) => (
-            <tr key={appliance.serialNo} className="">
-              <td className="px-6 py-4 whitespace-no-wrap ">
-                {appliance.serialNo}
-              </td>
-              <td className="px-6 py-4 whitespace-no-wrap">
-                {appliance.theatreName} <br />
-                <span className="text-[#084782]">
-                  {`${appliance.location.city}, ${appliance.location.state}, ${appliance.location.country}`}
-                </span>
-              </td>
-              {/* <td className="px-6 py-4 whitespace-no-wrap ">{`${appliance.location.city}, ${appliance.location.state}, ${appliance.location.country}`}</td> */}
-              <td className="px-6 py-4 whitespace-no-wrap ">
-                {appliance.bandwidth} <br />
-                <span className="text-[#69788C]">{appliance.avgBandwidth}</span>
-              </td>
-              {/* <td className="px-6 py-4 whitespace-no-wrap ">
+      <div className="overflow-x-auto">
+        <table className="min-w-full bg-white rounded-b-lg">
+          <thead className="border-b-gray-100">
+            <tr>
+              <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 text-gray-600">
+                Device Serial
+              </th>
+              <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 text-gray-600">
+                Location
+              </th>
+              <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 text-gray-600">
+                Bandwidth
+              </th>
+              <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 text-gray-600">
+                Status
+              </th>
+              <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 text-gray-600">
+                Download Status
+              </th>
+              <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 text-gray-600">
+                OS Version
+              </th>
+              <th className="px-6 py-3 border-b-2 border-gray-200 text-left text-sm leading-4 text-gray-600"></th>
+            </tr>
+          </thead>
+          <tbody>
+            {currentAppliances.map((appliance) => (
+              <tr key={appliance.serialNo} className="">
+                <td className="px-6 py-4 whitespace-no-wrap ">
+                  {appliance.serialNo}
+                </td>
+                <td className="px-6 py-4 whitespace-no-wrap">
+                  {appliance.theatreName} <br />
+                  <span className="text-[#084782]">
+                    {`${appliance.location.city}, ${appliance.location.state}, ${appliance.location.country}`}
+                  </span>
+                </td>
+                {/* <td className="px-6 py-4 whitespace-no-wrap ">{`${appliance.location.city}, ${appliance.location.state}, ${appliance.location.country}`}</td> */}
+                <td className="px-6 py-4 whitespace-no-wrap ">
+                  {appliance.bandwidth} <br />
+                  <span className="text-[#69788C]">
+                    {appliance.avgBandwidth}
+                  </span>
+                </td>
+                {/* <td className="px-6 py-4 whitespace-no-wrap ">
                 {appliance.avgBandwidth}
               </td> */}
-              <td className={`px-6 py-4 whitespace-no-wrap`}>
-                <div className="flex items-center capitalize">
-                  <span
-                    className={`block w-3 h-3 rounded-full mr-3 ${
-                      appliance.deviceStatus === 'online'
-                        ? 'bg-green-600'
-                        : 'bg-red-600'
-                    }`}
-                  ></span>
-                  {appliance.deviceStatus}
-                </div>
-              </td>
-              <td className={`px-6 py-4 whitespace-no-wrap`}>
-                <div className="flex items-center capitalize">
-                  <span
-                    className={`block w-3 h-3 rounded-full mr-3 ${
-                      appliance.downloadStatus.toLowerCase() === 'passed'
-                        ? 'bg-green-600'
-                        : appliance.downloadStatus.toLowerCase() === 'failed' ||
-                          appliance.downloadStatus.toLowerCase() === 'stalled'
-                        ? 'bg-red-600'
-                        : appliance.downloadStatus.toLowerCase() ===
-                            'downloading' ||
-                          appliance.downloadStatus.toLowerCase() ===
-                            'unarchiving'
-                        ? 'bg-blue-600'
-                        : appliance.downloadStatus.toLowerCase() ===
-                            'cancelled' ||
-                          appliance.downloadStatus.toLowerCase() === 'scheduled'
-                        ? 'bg-yellow-600'
-                        : appliance.downloadStatus.toLowerCase() ===
-                          'downloaded'
-                        ? 'bg-green-900'
-                        : 'bg-gray-600'
-                    }`}
-                  ></span>
-                  {appliance.downloadStatus}
-                </div>
-              </td>
-              <td className="px-6 py-4 whitespace-no-wrap ">
-                {appliance.osVersion}
-              </td>
-              <td className="px-6 py-4 whitespace-no-wrap ">
-                <button
-                  onClick={() => handleViewClick(appliance.serialNo)}
-                  className="bg-gray-100 text-black px-3 py-1 rounded hover:bg-gray-400"
-                >
-                  View
-                </button>
-              </td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+                <td className={`px-6 py-4 whitespace-no-wrap`}>
+                  <div className="flex items-center capitalize">
+                    <span
+                      className={`block w-3 h-3 rounded-full mr-3 ${
+                        appliance.deviceStatus === 'online'
+                          ? 'bg-green-600'
+                          : 'bg-red-600'
+                      }`}
+                    ></span>
+                    {appliance.deviceStatus}
+                  </div>
+                </td>
+                <td className={`px-6 py-4 whitespace-no-wrap`}>
+                  <div className="flex items-center capitalize">
+                    <span
+                      className={`block w-3 h-3 rounded-full mr-3 ${
+                        appliance.downloadStatus.toLowerCase() === 'passed'
+                          ? 'bg-green-600'
+                          : appliance.downloadStatus.toLowerCase() ===
+                              'failed' ||
+                            appliance.downloadStatus.toLowerCase() === 'stalled'
+                          ? 'bg-red-600'
+                          : appliance.downloadStatus.toLowerCase() ===
+                              'downloading' ||
+                            appliance.downloadStatus.toLowerCase() ===
+                              'unarchiving'
+                          ? 'bg-blue-600'
+                          : appliance.downloadStatus.toLowerCase() ===
+                              'cancelled' ||
+                            appliance.downloadStatus.toLowerCase() ===
+                              'scheduled'
+                          ? 'bg-yellow-600'
+                          : appliance.downloadStatus.toLowerCase() ===
+                            'downloaded'
+                          ? 'bg-green-900'
+                          : 'bg-gray-600'
+                      }`}
+                    ></span>
+                    {appliance.downloadStatus}
+                  </div>
+                </td>
+                <td className="px-6 py-4 whitespace-no-wrap ">
+                  {appliance.osVersion}
+                </td>
+                <td className="px-6 py-4 whitespace-no-wrap ">
+                  <button
+                    onClick={() => handleViewClick(appliance.serialNo)}
+                    className="bg-gray-100 text-black px-3 py-1 rounded hover:bg-gray-400"
+                  >
+                    View
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
