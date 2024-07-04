@@ -1,40 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Appliance Dashboard Project
+
+This project consists of a Next.js application that interfaces with a mock API server using JSON Server.
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Before running this project, ensure you have the following installed:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Node.js (v12 or higher)
+- npm (or yarn)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### Installation
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+1. Clone the repository:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+   ```bash
+   git clone https://github.com/your-username/appliance-dashboard.git
+   cd appliance-dashboard
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+2. Install dependencies for both the Next.js app and the mock API server:
 
-## Learn More
+   ```bash
+   # Install Next.js app dependencies
+   cd appliance-dashboard
+   npm install
 
-To learn more about Next.js, take a look at the following resources:
+   # Install mock API server dependencies
+   cd mock-server
+   npm install
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Running the Application
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Running the Mock API Server
 
-## Deploy on Vercel
+1. Navigate to the mock-server directory:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   cd appliance-dashboard/mock-server
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+2. Start the JSON Server using nodemon (watches for changes in server.js and db.json):
+
+   ```bash
+   nodemon server.js
+   ```
+
+The server will run on http://localhost:3001.
+
+### Running the Next.js Application
+
+1. In a new terminal, navigate back to the main project directory (if not already there):
+
+   ```bash
+   cd appliance-dashboard
+   ```
+
+2. Start the Next.js development server:
+
+   ```bash
+   npm run dev
+   ```
+
+The Next.js application will run on http://localhost:3000.
+
+## Accessing the Application
+
+Once both servers are running:
+
+Open your web browser and go to http://localhost:3000 to access the Next.js application.
