@@ -12,7 +12,8 @@
       "avgBandwidth": "812 Kbps",
       "deviceStatus": "offline",
       "downloadStatus": "failed",
-      "osVersion": "5.2.1.3"
+      "osVersion": "5.2.1.3",
+      "storageAvailable": "1024"
     },
     {
       "serialNo": "JTD-512322",
@@ -26,7 +27,83 @@
       "avgBandwidth": "1 Kbps",
       "deviceStatus": "online",
       "downloadStatus": "passed",
-      "osVersion": "5.2.1.4"
+      "osVersion": "5.2.1.4",
+      "storageAvailable": "877"
+    },
+    {
+      "serialNo": "JTD-512678",
+      "theatreName": "INOX",
+      "location": {
+        "city": "Mumbai",
+        "state": "Mumbai",
+        "country": "India"
+      },
+      "bandwidth": "12 Gbps",
+      "avgBandwidth": "10 Kbps",
+      "deviceStatus": "online",
+      "downloadStatus": "Cancelled",
+      "osVersion": "5.2.1.4",
+      "storageAvailable": "978"
+    },
+    {
+      "serialNo": "JTD-554232",
+      "theatreName": "PVR INOX",
+      "location": {
+        "city": "Bangalore",
+        "state": "Bangalore",
+        "country": "India"
+      },
+      "bandwidth": "2 Gbps",
+      "avgBandwidth": "1 Kbps",
+      "deviceStatus": "online",
+      "downloadStatus": "Downloading",
+      "osVersion": "5.2.1.9",
+      "storageAvailable": "879"
+    },
+    {
+      "serialNo": "JTD-514324",
+      "theatreName": "Cinepolis",
+      "location": {
+        "city": "Hyderabad",
+        "state": "Hyderabad",
+        "country": "India"
+      },
+      "bandwidth": "2.5 Gbps",
+      "avgBandwidth": "3 Kbps",
+      "deviceStatus": "online",
+      "downloadStatus": "Scheduled",
+      "osVersion": "5.3.1.4",
+      "storageAvailable": "987"
+    },
+    {
+      "serialNo": "JTD-514324",
+      "theatreName": "Miraj Cinemas",
+      "location": {
+        "city": "Coimbatore",
+        "state": "Coimbatore",
+        "country": "India"
+      },
+      "bandwidth": "3 Gbps",
+      "avgBandwidth": "3.5 Kbps",
+      "deviceStatus": "online",
+      "downloadStatus": "Unarchiving",
+      "osVersion": "5.3.1.4",
+      "storageAvailable": "1000"
+    },
+    {
+      "serialNo": "JTD-514924",
+      "theatreName": "INOX",
+      "location": {
+        "city": "Kerala",
+        "state": "Kerala",
+        "country": "India"
+      },
+      "bandwidth": "3 Gbps",
+      "avgBandwidth": "3.5 Kbps",
+      "deviceStatus": "Offline",
+      "downloadStatus": "Stalled",
+      "osVersion": "5.3.1.4",
+      "storageAvailable": "990"
     }
   ]
 }
